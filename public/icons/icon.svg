@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0F172A"/>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <!-- Radar circles -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.2"/>
+  <circle cx="256" cy="256" r="120" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.3"/>
+  <circle cx="256" cy="256" r="60" fill="none" stroke="#3B82F6" stroke-width="2" opacity="0.4"/>
+  <!-- Crosshairs -->
+  <line x1="256" y1="76" x2="256" y2="436" stroke="#3B82F6" stroke-width="1.5" opacity="0.2"/>
+  <line x1="76" y1="256" x2="436" y2="256" stroke="#3B82F6" stroke-width="1.5" opacity="0.2"/>
+  <!-- Trend line (chart) -->
+  <polyline points="110,330 170,290 210,310 260,220 310,240 360,170 400,190" fill="none" stroke="#3B82F6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Glow dot -->
+  <circle cx="400" cy="190" r="14" fill="#3B82F6"/>
+  <circle cx="400" cy="190" r="8" fill="white"/>
+  <!-- KRW symbol -->
+  <text x="256" y="430" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#3B82F6" text-anchor="middle" opacity="0.8">₩</text>
+</svg>

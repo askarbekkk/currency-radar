@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3B82F6;
+  --color-background: #0F172A;
+  --color-surface: #1E293B;
+  --color-surface-2: #334155;
+  --color-text-primary: #F1F5F9;
+  --color-text-secondary: #94A3B8;
+  --color-success: #22C55E;
+  --color-danger: #EF4444;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* ===== Glass utilities (after utilities so Tailwind processes correctly) ===== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+}
+
+.glass-2 {
+  background: var(--glass-2-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+}
+
+.glass-nav {
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--nav-border);
+}
+
+/* ===== Light theme overrides for Tailwind static classes ===== */
+[data-theme="light"] .text-text-primary   { color: #0F172A !important; }
+[data-theme="light"] .text-text-secondary { color: #475569 !important; }
+[data-theme="light"] .text-primary        { color: #2563EB !important; }
+[data-theme="light"] .bg-surface          { background-color: rgb(200 220 255) !important; }
+[data-theme="light"] .bg-surface-2        { background-color: rgb(170 195 240) !important; }
+[data-theme="light"] .bg-primary          { background-color: #2563EB !important; }
+[data-theme="light"] .border-surface-2    { border-color: rgb(150 175 225) !important; }
+[data-theme="light"] .text-danger         { color: #DC2626 !important; }
+[data-theme="light"] .text-success        { color: #16A34A !important; }
+[data-theme="light"] .bg-primary\/10      { background-color: rgba(37,99,235,0.12) !important; }
+[data-theme="light"] .bg-primary\/20      { background-color: rgba(37,99,235,0.20) !important; }
+[data-theme="light"] .bg-danger\/10       { background-color: rgba(220,38,38,0.10) !important; }
+[data-theme="light"] .border-primary\/20  { border-color: rgba(37,99,235,0.25) !important; }
+[data-theme="light"] input,
+[data-theme="light"] select               { color: #0F172A; }
+
+/* ===== Theme Variables ===== */
+:root {
+  --cr-primary: 59 130 246;
+  --cr-surface: 30 41 59;
+  --cr-surface-2: 51 65 85;
+  --cr-text-primary: 241 245 249;
+  --cr-text-secondary: 148 163 184;
+  --cr-success: 34 197 94;
+  --cr-danger: 239 68 68;
+
+  --glass-bg: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-2-bg: rgba(255, 255, 255, 0.13);
+  --nav-bg: rgba(10, 8, 30, 0.88);
+  --nav-border: rgba(255, 255, 255, 0.10);
+
+  --bg-from: #0F0C29;
+  --bg-via: #302B63;
+  --bg-to: #24243E;
+}
+
+[data-theme="light"] {
+  --cr-primary: 37 99 235;
+  --cr-surface: 200 220 255;
+  --cr-surface-2: 170 195 240;
+  --cr-text-primary: 15 23 42;
+  --cr-text-secondary: 71 85 105;
+  --cr-success: 22 163 74;
+  --cr-danger: 220 38 38;
+
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.90);
+  --glass-2-bg: rgba(255, 255, 255, 0.40);
+  --nav-bg: rgba(210, 225, 255, 0.82);
+  --nav-border: rgba(100, 130, 200, 0.18);
+
+  --bg-from: #DBEAFE;
+  --bg-via: #EDE9FE;
+  --bg-to: #BAE6FD;
+}
+
+/* ===== Base ===== */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  background: linear-gradient(135deg, var(--bg-from) 0%, var(--bg-via) 50%, var(--bg-to) 100%);
+}
+
+body {
+  margin: 0;
+  background: transparent;
+  color: rgb(var(--cr-text-primary));
+  font-family: 'Inter', system-ui, sans-serif;
+  overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--cr-surface-2) / 0.6);
+  border-radius: 2px;
+}
+
+/* ===== Animations ===== */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

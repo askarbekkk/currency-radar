@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Currency Radar</string>
+    <string name="title_activity_main">Currency Radar</string>
+    <string name="package_name">com.askar.currencyradar</string>
+    <string name="custom_url_scheme">com.askar.currencyradar</string>
+</resources>
